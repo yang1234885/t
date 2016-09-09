@@ -1,0 +1,314 @@
+<div ng-include src="'menu.html'"></div>
+<div class="i041 i04">
+	<!--商品库表格页面-->
+	<div class="menu_ku">
+        <div class="i04_title">日常商品库</div>
+    <!--搜索栏-->
+        <div class="search">
+            <input type="text" id="datetimepicker_daily" ng-focus="datetimepicker()" class="i04_list search_date" placeholder="修改日期">
+            <div class="i04_list search_type" ng-click="showList05()">
+                <span>{{searchTypeKu}}</span>
+                <ul class="i04_show type_list" id="type_list_ku">
+                    <li>投放商圈名</li>
+                    <li>商品库名</li>
+                    <li>商品ID</li>
+                    <li>投放商圈ID</li>
+                </ul>
+            </div>
+            <input type="search" placeholder="输入内容搜索" class="i04_search_box">
+            <span class="i04_search_btn">查询</span>
+            <div class="i04_big_btn">
+                添加新商品库
+            </div>
+        </div>
+    <!--商品库表格-->
+        <table class="ku_table table-bordered table-striped table-responsive" id="ku_table">
+            <thead>
+                <tr>
+                    <th>修改日期</th>
+                    <th>商品库名称</th>
+                    <th>商品库名称</th>
+                    <th>商品库ID</th>
+                    <th>投放商圈/商店</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="">
+                <tr>
+                    <td>12:06<br>2016-09-01</td>
+                    <td>手机库</td>
+                    <td>0000500300</td>
+                    <td>
+                        <span>1.爱琴海商圈</span>，
+                        <span>2.宝龙商圈</span>，
+                        <span>3.万达商圈</span>，
+                        <span>4.星夜便利店</span>......
+                        <a href="#">查看去向</a>
+                    </td>
+                    <td>
+                        <a href="#">编辑</a>
+                        <a href="#">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>    <!--页面跳转栏-->  
+        <div class="con">
+            <div class="i04_dol">
+                <div class="i04_list dol_num" ng-click="showList06()">
+                    <span>{{dolListKu}}</span>
+                    <ul class="i04_show dol_list" id="dol_list_ku">
+                        <li>10</li>
+                        <li>30</li>
+                    </ul>
+                </div>
+                <span class="tiao">条</span>
+                <div class="dol_btn"></div>
+            </div>
+            <div class="i04_change_page">
+                <div class="return_btn"></div>
+                <input type="text" value="1" class="page">
+                <span>
+                /<span class="page_num">10</span>
+                </span>
+                <div class="go_btn"></div>
+            </div>
+        </div>
+        
+        <div class="i04_remind delete_ku">
+            <h3>温馨提示</h3>
+            <p>是否删除商品库？</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+        <div class="i04_remind add_ku">
+            <h3>输入产品库名称</h3>
+            <input type="text" class=" i04_ku_name">
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+    </div>
+	<!--商品库编辑页面-->
+    <div class="menu_ku_edit">
+    	<div class="ku_title_box">
+            <div class="i04_title ku_edit_title">编辑日常商品库</div>
+            <div class="i04_big_btn return_ku">返回日常商品库</div>
+        </div>
+        <div class="search">
+            <!--商品库名称-->
+        	<div class="ku_name">
+            	<span>商品库名称：</span>
+                <span class="change_ku_name"><a href="#">大表头</a></span>
+            </div>
+            <input type="text" id="datetimepicker_daily_edit" ng-focus="datetimepicker()" class="i04_list search_date" placeholder="修改日期">
+            <div class="i04_list search_type" ng-click="showList07()">
+                <span>{{searchTypeKuEdit}}</span>
+                <ul class="i04_show type_list" id="type_list_ku_edit">
+                    <li>投放商圈名</li>
+                    <li>商品库名</li>
+                    <li>商品ID</li>
+                    <li>投放商圈ID</li>
+                </ul>
+            </div>
+            <input type="search" placeholder="输入内容搜索" class="i04_search_box">
+            <span class="i04_search_btn">查询</span>
+            <div class="i04_big_btn">
+                添加新商品碎片
+            </div>
+        </div>
+        <table class="ku_edit_table table-bordered table-striped table-responsive" id="ku_edit_table">
+            <thead>
+                <tr>
+                    <th>修改日期</th>
+                    <th>商品名称</th>
+                    <th>商品ID</th>
+                    <th>商品价格</th>
+                    <th>最低可见等级</th>
+                    <th>兑换商名称</th>
+                    <th>兑换商ID</th>
+                    <th>剩余碎片(个)</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12:06<br>2016-09-01</td>
+                    <td>大宝SOD蜜</td>
+                    <td>500300</td>
+                    <td>¥1000</td>
+                    <td>1</td>
+                    <td>大宝天天见</td>
+                    <td>o12345678900</td>
+                    <td>
+                        <span>1号：2000</span>，
+                        <span>2号：2000</span>，
+                        <span>3号：2000</span>，
+                        <span>4号：2000</span>，
+                        <span>6号：2000</span>，
+                        <span>7号：2000</span>，
+                        <span>8号：2000</span>，
+                        <span>9号：2000</span>，
+                    </td>
+            	<td>
+                	<a href="#">修改碎片数量</a>
+                	<a href="#">移除商品</a>
+                </td>
+                </tr>
+            </tbody>
+        </table>    
+        <div class="con">
+            <div class="i04_dol">
+                <div class="i04_list dol_num" ng-click="showList08()">
+                    <span>{{dolListKuEdit}}</span>
+                    <ul class="i04_show dol_list" id="dol_list_ku_edit">
+                        <li>10</li>
+                        <li>30</li>
+                    </ul>
+                </div>
+                <span class="tiao">条</span>
+                <div class="dol_btn"></div>
+            </div>
+            <div class="i04_change_page">
+                <div class="return_btn"></div>
+                <input type="text" value="1" class="page">
+                <span>
+                /<span class="page_num">10</span>
+                </span>
+                <div class="go_btn"></div>
+            </div>
+        </div>
+        <div class="i04_remind delete_edit_ku">
+            <h3>温馨提示</h3>
+            <p>是否在库内删除该商品？</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+        <div class="i04_remind add_ku">
+            <h3>输入产品库名称</h3>
+            <input type="text" class=" i04_ku_name">
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+        <!--商品库名已经存在提示框-->
+        <div class="i04_remind ku_name_exit">
+            <h3>温馨提示</h3>
+            <p>该商品库名已经存在，请重新输入</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn yes i04_btn_single ">确定</span>
+            </div>
+        </div>
+        <!--修改碎片数量-->
+        <div class="i04_remind change_suipian">
+            <h3>输入产品库名称</h3>
+            <div class="suipian_box">
+            	<div class="suipianhao">
+                	<span>碎片号：</span>
+                    <div class="i04_list change_suipianhao" ng-click="showList09()">
+                    	<span>{{suipianshu}}</span>
+                        <ul class="i04_show show_suipianshu" id="show_suipianshu">
+                        	<li>1</li>
+                        	<li>2</li>
+                        	<li>3</li>
+                        	<li>4</li>
+                        	<li>6</li>
+                        	<li>7</li>
+                        	<li>8</li>
+                        	<li>9</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="suipianshu">
+                	<span>数量：</span>
+                    <input type="text" class="suipianshu_text">
+                </div>
+            </div>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+        <!--添加新碎片-->
+        <div class="i04_edit add_new_suipian">
+            <h2>添加新商品碎片</h2>
+            <div class="search_add_suipian">
+                <div class="i04_list add_suipian_type" ng-click="showList10()">
+                	<span>{{searchTypeSuipian}}</span>
+                    <ul class="i04_show show_add_suipian" id="show_add_suipian">
+                        <li>商品名称</li>
+                        <li>商品ID</li>
+                        <li>兑换商名称</li>
+                        <li>兑换商ID</li>
+                        <li>商品价格区间</li>
+                    </ul>
+                </div>
+                <input type="text" placeholder="输入搜索内容功能" class="i04_search_box search_box_suipian">
+                <span class="i04_search_btn search_btn_suipian">查询</span>
+            </div>
+            <table class="suipian_table i04_smaller table-bordered table-striped table-responsive" id="seller_edit_table">
+                <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>商品ID</th>
+                        <th>商品价格</th>
+                        <th>最低可见等级</th>
+                        <th>兑换商名称</th>
+                        <th>兑换商ID</th>
+                        <th>商品数量</th>
+                        <th>商品选择</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>大宝SOD蜜</td>
+                        <td>5000000</td>
+                        <td>¥1000</td>
+                        <td>1</td>
+                        <td>大宝天天见</td>
+                        <td>o12345678900</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                        <td>
+                            <input type="checkbox">选择
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="i04_change_page change_page_suipian">
+                <div class="return_btn"></div>
+                <input type="text" value="1" class="page">
+                <span>
+                /<span class="page_num">10</span>
+                </span>
+                <div class="go_btn"></div>
+            </div>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">放弃</span>
+                <span class="i04_btn yes">保存</span>
+            </div>
+            <div class="i04_remind cancel_add_suipian">
+                <h3>温馨提示</h3>
+                <p>是否放弃保存产品信息？</p>
+                <div class="i04_btn_box">
+                    <span class="i04_btn cancel">取消</span>
+                    <span class="i04_btn confirm">确定</span>
+                </div>
+            </div>
+            <div class="i04_remind save_add_suipian">
+                <h3>温馨提示</h3>
+                <p>是否确定保存产品信息？</p>
+                <div class="i04_btn_box">
+                    <span class="i04_btn cancel">取消</span>
+                    <span class="i04_btn confirm">确定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

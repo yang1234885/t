@@ -1,0 +1,244 @@
+<div ng-include src="'menu.html'"></div>
+<div class="i040 i04">
+	<div class="i04_title">商品目录</div>
+    <!--搜索栏-->
+    <div class="search">
+        <input type="text" id="datetimepicker" ng-focus="datetimepicker()" class="i04_list search_date" placeholder="修改日期">
+        <div class="i04_list search_type" ng-click="showList01()">
+        	<span>{{searchTypeMenu}}</span>
+        	<ul class="i04_show type_list" id="type_list_menu">
+            	<li>商品名称</li>
+            	<li>商品ID</li>
+            	<li>兑换商名称</li>
+            	<li>兑换商ID</li>
+            	<li>商品价格区间</li>
+            </ul>
+        </div>
+        <input type="search" placeholder="输入内容搜索" class="i04_search_box">
+        <span class="i04_search_btn">查询</span>
+        <div class="i04_big_btn" ng-click="menuEdit()">
+        	添加新商品
+        </div>
+    </div>
+    <!--商品目录表格-->
+    <table class="menu_table table-bordered table-striped table-responsive" id="menu_table">
+    	<thead>
+        	<tr>
+            	<th>修改日期</th>
+            	<th>商品名称</th>
+            	<th>商品ID</th>
+                <th>商品价格</th>
+                <th>商品成本价</th>
+                <th>兑换商品名称</th>
+                <th>商品简介</th>
+                <th>兑换方式</th>
+                <th>已投放的碎片(个)</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr>
+            	<td>12:06<br>2016-09-01</td>
+            	<td>大宝SOD蜜</td>
+            	<td>500300</td>
+            	<td>¥1000</td>
+            	<td>¥800</td>
+            	<td>大头手表</td>
+            	<td>护手保湿自尊优品</td>
+            	<td>邮寄</td>
+            	<td>
+                	<span>1号：2000</span>，
+                	<span>2号：2000</span>，
+                	<span>3号：2000</span>，
+                	<span>4号：2000</span>，
+                	<span>6号：2000</span>，
+                	<span>7号：2000</span>，
+                	<span>8号：2000</span>，
+                	<span>9号：2000</span>，
+                    <a href="#">查看去向</a>
+                </td>
+            	<td>
+                	<a href="#">编辑</a>
+                	<a href="#">下架</a>
+                	<a href="#">上架</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>  
+    <!--页面跳转栏-->  
+    <div class="con">
+    	<div class="i04_dol">
+            <div class="i04_list dol_num" ng-click="showList02()">
+                <span>{{dolListMenu}}</span>
+                <ul class="i04_show dol_list" id="dol_list_menu">
+                    <li>10</li>
+                    <li>30</li>
+                </ul>
+            </div>
+            <span class="tiao">条</span>
+            <div class="dol_btn"></div>
+        </div>
+        <div class="i04_change_page">
+        	<div class="return_btn"></div>
+            <input type="text" value="1" class="page">
+            <span>
+            /<span class="page_num">10</span>
+            </span>
+        	<div class="go_btn"></div>
+        </div>
+    </div>
+    <!--下架提示-->
+    <div class="i04_remind xiajia">
+    	<h3>温馨提示</h3>
+        <p>是否下架该产品？</p>
+        <div class="i04_btn_box">
+        	<span class="i04_btn not">取消</span>
+        	<span class="i04_btn yes">确定</span>
+        </div>
+    </div>
+    <!--上架提示-->
+    <div class="i04_remind shangjia">
+    	<h3>温馨提示</h3>
+        <p>是否上架该产品？</p>
+        <div class="i04_btn_box">
+        	<span class="i04_btn not">取消</span>
+        	<span class="i04_btn yes">确定</span>
+        </div>
+    </div>
+    <!--商品编辑页面-->
+    <div class="i04_edit menu_edit" id="menu_edit" ng-hide="sureGiveup">
+    	<h2>商品目录商品编辑</h2>
+        <ul class="edit_list">
+        	<li>
+                <span class="type">商品名称:</span>
+                <input type="text" class="contain" ng-model="newName">
+            </li>
+        	<li>
+                <span class="type">价格:</span>
+                <input type="text" class="contain" ng-model="newPrice">
+            </li>
+        	<li>
+                <span class="type">成本价:</span>
+                <input type="text" class="contain" ng-model="newInitPrice">
+            </li>
+        	<li>
+                <span class="type">商品介绍:</span>
+                <input type="text" class="contain" ng-model="newIntroduce">
+            </li>
+        	<li>
+                <span class="type">兑换方式:</span>
+                <div class="i04_list exchange " ng-click="showList03()">
+                	<span>{{exchangeListEdit}}</span>
+                	<ul class="i04_show exchange_list" id="exchange_list_edit">
+                    	<li>邮寄</li>
+                    	<li>实体店</li>
+                    	<li>团购劵</li>
+                    </ul>
+                </div>
+                <span class="lowest">最低可视等级：</span> 
+                <input type="text" class="lowest_num" ng-model="newMinVisibleLv"><span class="line">-</span><input type="text" class="lowest_num">
+            </li>
+        	<li>
+                <span class="type">兑换商:</span>
+                <input type="text" class="contain" ng-model="newMerchantName" >
+            </li>
+        	<li>
+                <span class="type">商品图片:</span>
+                <input type="file" class="pic_file" accept="image/png,image/jpeg" id="file_upload" ng-click="choose_pic()" ng-model="newImageFid">
+                <div class="img_container">
+                	图片大小：600＊600<br>
+                	图片格式：JPEG/PNG
+                    <img id="preview">
+                </div>
+            </li>
+        </ul>
+        <div class="i04_btn_box">
+        	<span class="i04_btn not" ng-click="giveupSave()">放弃</span>
+            <span class="i04_btn yes" ng-click="addGoods()">保存</span>
+        </div>
+        <div class="i04_remind giveup_save" id="giveup_save" ng-hide="cancelCan">
+            <h3>温馨提示</h3>
+            <p>是否放弃保存商品信息？</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn not" ng-click="cancel()">取消</span>
+                <span class="i04_btn yes" ng-click="sure()">确定</span>
+            </div>
+        </div>
+    </div>
+    <!--兑换商页面-->
+    <div class="i04_edit seller_edit">
+    	<h2>修改商品兑换商</h2>
+        <div class="search_seller">
+        	<div class="i04_list seller_search_type" ng-click="showList04()">
+            	<span>{{sellerShoeType}}</span>
+            	<ul class="i04_show seller_show_type" id="seller_show_type">
+                	<li>兑换商名称</li>
+                    <li>兑换商ID</li>
+                    <li>联系方式</li>
+                    <li>兑换商地址</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="输入搜索内容功能" class="i04_search_box search_box_02">
+            <span class="i04_search_btn search_btn_02">查询</span>
+        </div>
+        <table class="seller_edit_table i04_smaller table-bordered table-striped table-responsive" id="seller_edit_table">
+            <thead>
+                <tr>
+                    <th>兑换商名称</th>
+                    <th>兑换商ID</th>
+                    <th>联系方式</th>
+                    <th>兑换商地址</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td>恒大</td>
+                	<td>o123456789000</td>
+                	<td>18606222222</td>
+                	<td>美国加州</td>
+                	<td>
+                    	<a href="＃">选择兑换商</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="i04_change_page change_page_02">
+            <div class="return_btn"></div>
+            <input type="text" value="1" class="page">
+            <span>
+            /<span class="page_num">10</span>
+            </span>
+            <div class="go_btn"></div>
+        </div>
+        <div class="i04_btn_box">
+        	<span class="i04_btn not">放弃</span>
+            <span class="i04_btn yes">保存</span>
+        </div>
+    </div>
+    <div class="i04_edit suipian_info">
+    	<h2>碎片去向详情</h2>
+        <table class="suipian_info_table i04_smaller table-bordered table-striped table-responsive" id="suipian_info_table">
+        	<thead>
+            	<tr>
+                	<th>碎片号</th>
+                	<th>总投放</th>
+                	<th>已投放未被获取</th>
+                	<th>幸运蛋消耗</th>
+                	<th>用户背包中未被消耗</th>
+                	<th>用于兑换</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr>
+                	<td>1号</td>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

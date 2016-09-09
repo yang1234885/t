@@ -1,0 +1,60 @@
+<div ng-include src="'menu.html'"></div>
+
+<div class="i012">
+    <div class="head">5号碎片投放记录</div>
+
+    <div class="content3 clearfix">
+        <select>
+            <option value="0">状态</option>
+            <option value="1">已获取</option>
+            <option value="2">投放中</option>
+        </select>
+        <select>
+            <option value="0">查询类型</option>
+            <option value="1">商品名称</option>
+            <option value="2">商品ID</option>
+        </select>
+        <span class="search">
+            <input type="text" placeholder="请输入值">
+            <button>查询</button>
+         </span>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>修改时间</td>
+            <td>商圈方式</td>
+            <td>获取用户</td>
+            <td>商品名称</td>
+            <td>商品ID</td>
+            <td>商品价值</td>
+            <td>状态</td>
+            <td>操作管理员</td>
+        </tr>
+        <tr ng-repeat="x in i012.table">
+                <td>{{x.time}}</td>
+                <td>{{x.type}}</td>
+                <td>{{x.user}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.id}}</td>
+                <td>{{x.price}}</td>
+                <td>{{x.state==1?'已获取':'投放中'}}</td>
+                 <td>{{x.admin}}</td>
+        </tr>
+    </table>
+
+    <div class="content4">
+        <select class="ff" style="margin-right: 0">
+            <option value="10">10</option>
+            <option value="30">30</option>
+        </select>
+        <span class="ff text1">条</span>
+
+        <span class="down "></span>
+        <span class="fr">
+        <span class="left "></span>
+        <input type="text ">
+        <span class="text">/10</span>
+        <span class="right "></span>
+    </span>
+    </div>
+</div>

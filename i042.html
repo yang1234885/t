@@ -1,0 +1,170 @@
+<div ng-include src="'menu.html'"></div>
+<div class="i042 i04">
+
+    <div class="lucky_title_box">
+        <div class="i04_title lucky_title">幸运蛋库</div>
+        <div class="lucky_title_info">
+        	<span>价值区间：1000-2000</span>｜
+        	<span>单次行为价值：0.1</span>｜
+        	<span>幸运蛋经验上限：1000</span>
+        </div>
+    </div>
+    <!--搜索栏-->
+    <div class="search">
+        <!--商品库名称-->
+        <input type="text" id="datetimepicker_lucky" ng-focus="datetimepicker()" class="i04_list search_date" placeholder="修改日期">
+        <div class="i04_list search_type">
+            查询类型
+            <ul class="i04_show type_list">
+                <li>物品名称</li>
+                <li>物品ID</li>
+                <li>兑换商名称</li>
+                <li>兑换商ID</li>
+                <li>物品编号</li>
+                <li>物品价格区间</li>
+            </ul>
+        </div>
+        <input type="search" placeholder="输入内容搜索" class="i04_search_box">
+        <span class="i04_search_btn">查询</span>
+        <div class="i04_big_btn">
+            修改幸运蛋库
+        </div>
+    </div>
+    <!--幸运蛋表格-->  
+    <table class="lucky_table table-bordered table-striped table-responsive" id="lucky_table">
+        <thead>
+            <tr>
+                <th>修改日期</th>
+                <th>商品名称</th>
+                <th>商品ID</th>
+                <th>商品价格</th>
+                <th>兑换商名称</th>
+                <th>兑换商ID</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>12:06<br>2016-09-01</td>
+                <td>大宝SOD蜜</td>
+                <td>0000500300</td>
+                <td>¥1000</td>
+                <td>大宝</td>
+                <td>99988888866</td>
+                <td>
+                    <a href="#">移除商品</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--页面跳转栏-->  
+    <div class="con">
+        <div class="i04_dol">
+            <div class="i04_list dol_num">
+                <span>10</span>
+                <ul class="i04_show dol_list">
+                    <li>10</li>
+                    <li>30</li>
+                </ul>
+            </div>
+            <span class="tiao">条</span>
+            <div class="dol_btn"></div>
+        </div>
+        <div class="i04_change_page">
+            <div class="return_btn"></div>
+            <input type="text" value="1" class="page">
+            <span>
+            /<span class="page_num">10</span>
+            </span>
+            <div class="go_btn"></div>
+        </div>
+    </div>
+    
+    <div class="i04_remind delete_lucky">
+        <h3>温馨提示</h3>
+        <p>是否移除该商品</p>
+        <div class="i04_btn_box">
+            <span class="i04_btn not">取消</span>
+            <span class="i04_btn yes">确定</span>
+        </div>
+    </div>
+    <!--添加新碎片-->
+    <div class="i04_edit change_lucky">
+        <h2>修改幸运蛋库</h2>
+        <div class="change_lucky_search">
+        	<div class="qujian">
+            	<span>价值区间：</span>
+                <input type="text">-<input type="text">
+            </div>
+            <div class="shangxian">
+            	<span>幸运蛋经验上限</span>
+                <input type="text">
+            </div>
+            <div class="i04_list change_lucky_type"><span>查询类型</span>
+                <ul class="i04_show show_change_type">
+                <li>物品名称</li>
+                <li>物品ID</li>
+                <li>兑换商名称</li>
+                <li>兑换商ID</li>
+                <li>物品编号</li>
+                <li>物品价格区间</li>
+                </ul>
+            </div>
+            <input type="text" placeholder="输入搜索内容功能" class="i04_search_box search_box_lucky">
+            <span class="i04_search_btn search_btn_lucky">查询</span>
+        </div>
+        <table class="change_lucky_table i04_smaller table-bordered table-striped table-responsive" id="change_lucky_table">
+            <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商品ID</th>
+                    <th>商品价格</th>
+                    <th>兑换商名称</th>
+                    <th>兑换商ID</th>
+                    <th>商品选择</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>大宝SOD蜜</td>
+                    <td>5000000</td>
+                    <td>¥1000</td>
+                    <td>大宝天天见</td>
+                    <td>o12345678900</td>
+                    <td>
+                        <input type="checkbox">选择
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="i04_change_page change_page_lucky">
+            <div class="return_btn"></div>
+            <input type="text" value="1" class="page">
+            <span>
+            /<span class="page_num">10</span>
+            </span>
+            <div class="go_btn"></div>
+        </div>
+        <div class="i04_btn_box">
+            <span class="i04_btn not">放弃</span>
+            <span class="i04_btn yes">保存</span>
+        </div>
+        <div class="i04_remind cancel_add_lucky">
+            <h3>温馨提示</h3>
+            <p>是否放弃保存产品信息？</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+        <div class="i04_remind save_add_lucky">
+            <h3>温馨提示</h3>
+            <p>是否确定保存产品信息？</p>
+            <div class="i04_btn_box">
+                <span class="i04_btn not">取消</span>
+                <span class="i04_btn yes">确定</span>
+            </div>
+        </div>
+    </div>
+
+</div>
